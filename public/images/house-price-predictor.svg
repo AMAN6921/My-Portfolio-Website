@@ -1,0 +1,23 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#grad2)"/>
+  <text x="600" y="350" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle" font-weight="bold">
+    House Price Predictor
+  </text>
+  <text x="600" y="420" font-family="Arial, sans-serif" font-size="32" fill="white" text-anchor="middle" opacity="0.9">
+    93% Accuracy
+  </text>
+  <text x="600" y="480" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle" opacity="0.8">
+    Python • Machine Learning • Flask • Scikit-learn
+  </text>
+  <rect x="200" y="550" width="800" height="8" fill="white" opacity="0.3" rx="4"/>
+  <rect x="200" y="550" width="744" height="8" fill="white" opacity="0.9" rx="4"/>
+  <text x="600" y="600" font-family="Arial, sans-serif" font-size="18" fill="white" text-anchor="middle" opacity="0.7">
+    Machine Learning Regression Model
+  </text>
+</svg>

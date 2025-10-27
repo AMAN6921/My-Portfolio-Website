@@ -1,0 +1,21 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#grad1)"/>
+  <text x="600" y="350" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle" font-weight="bold">
+    Cloud VM Resource Optimization
+  </text>
+  <text x="600" y="420" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle" opacity="0.9">
+    0/1 Knapsack Algorithm Implementation
+  </text>
+  <text x="600" y="480" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle" opacity="0.8">
+    C++ • React • Flask • DSA Algorithms
+  </text>
+  <circle cx="300" cy="600" r="40" fill="white" opacity="0.2"/>
+  <circle cx="600" cy="650" r="60" fill="white" opacity="0.2"/>
+  <circle cx="900" cy="600" r="40" fill="white" opacity="0.2"/>
+</svg>

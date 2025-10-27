@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aman Devrani - Portfolio Website
+
+A modern, responsive portfolio website built with Next.js 14+, TypeScript, and Tailwind CSS to showcase technical skills, projects, experience, and achievements.
+
+## Tech Stack
+
+- **Framework**: Next.js 16.0.0 (App Router)
+- **UI Library**: React 19.2.0
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS 4
+- **Animations**: Framer Motion 12
+- **Icons**: React Icons & Lucide React
+- **Font**: Inter (Google Fonts)
+
+## Project Structure
+
+```
+portfolio-website/
+├── app/                    # Next.js App Router
+│   ├── layout.tsx         # Root layout with metadata
+│   ├── page.tsx           # Main portfolio page
+│   └── globals.css        # Global styles and design tokens
+├── components/            # React components
+├── data/                  # Data files (projects, skills, etc.)
+├── public/               # Static assets
+│   └── images/           # Project screenshots
+├── tailwind.config.ts    # Tailwind configuration
+└── tsconfig.json         # TypeScript configuration
+```
+
+## Design System
+
+### Color Palette
+- **Primary**: Blue (#3B82F6)
+- **Accent**: Green (#10B981), Purple (#8B5CF6)
+- **Neutral**: Gray scale for text and backgrounds
+
+### Typography
+- **Font Family**: Inter
+- **Font Sizes**: 12px - 48px scale
+- **Font Weights**: 400, 500, 600, 700
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Run linting
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the portfolio in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- ✅ Responsive design (mobile-first approach)
+- ✅ TypeScript with strict mode
+- ✅ Tailwind CSS with custom design tokens
+- ✅ Smooth scroll navigation
+- ✅ Framer Motion animations
+- ✅ SEO optimized with metadata
+- ✅ Accessibility compliant (WCAG 2.1 AA)
+- ✅ Performance optimized (< 3s load time)
 
-## Learn More
+## Development
 
-To learn more about Next.js, take a look at the following resources:
+The project follows a component-based architecture with:
+- Reusable React components in `/components`
+- Centralized data management in `/data`
+- Custom design tokens in `globals.css`
+- Type-safe development with TypeScript
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is optimized for deployment on Vercel:
 
-## Deploy on Vercel
+```bash
+# Deploy to Vercel
+vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Or connect your Git repository for automatic deployments
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+© 2025 Aman Devrani. All rights reserved.

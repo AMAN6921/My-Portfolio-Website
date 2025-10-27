@@ -1,0 +1,30 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EC4899;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#grad3)"/>
+  <text x="600" y="330" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle" font-weight="bold">
+    Multi-Model ML Loan Allocation
+  </text>
+  <text x="600" y="400" font-family="Arial, sans-serif" font-size="32" fill="white" text-anchor="middle" opacity="0.9">
+    95% Accuracy
+  </text>
+  <text x="600" y="460" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle" opacity="0.8">
+    Python • Machine Learning • Pandas • NumPy
+  </text>
+  <rect x="250" y="520" width="200" height="120" fill="white" opacity="0.2" rx="8"/>
+  <rect x="500" y="520" width="200" height="120" fill="white" opacity="0.2" rx="8"/>
+  <rect x="750" y="520" width="200" height="120" fill="white" opacity="0.2" rx="8"/>
+  <text x="350" y="590" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">
+    Model 1
+  </text>
+  <text x="600" y="590" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">
+    Model 2
+  </text>
+  <text x="850" y="590" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="bold">
+    Model 3
+  </text>
+</svg>
