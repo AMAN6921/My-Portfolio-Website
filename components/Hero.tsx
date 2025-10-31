@@ -147,23 +147,10 @@ export default function Hero({
             View My Projects
           </motion.button>
 
-          <motion.a
-            initial={{ opacity: 0, y: 30, scale: 0.8 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
-            whileHover={{ scale: 1.1, y: -3 }}
-            href="/resume.pdf"
-            download
-            className="flex items-center justify-center px-3 sm:px-4 py-2 bg-gradient-to-r from-accent-600/20 to-accent-500/20 backdrop-blur-sm rounded-full shadow-lg border border-accent-400/40 hover:border-accent-300/60 transition-all duration-200 text-xs sm:text-sm text-accent-200 font-semibold tracking-wide font-outfit"
-            aria-label="Download resume PDF"
-          >
-            Download Resume
-          </motion.a>
-
           <motion.button
             initial={{ opacity: 0, x: 30, scale: 0.8 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
             whileHover={{ scale: 1.1, y: -3 }}
             onClick={() => scrollToSection('contact')}
             className="px-3 sm:px-4 py-2 bg-gradient-to-r from-primary-600/20 to-accent-600/20 backdrop-blur-sm rounded-full shadow-lg border border-primary-400/40 hover:border-accent-300/60 transition-all duration-200 text-xs sm:text-sm text-primary-200 font-semibold tracking-wide font-outfit"
