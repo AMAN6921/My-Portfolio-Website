@@ -1,4 +1,4 @@
-import { Achievement, Certification } from './types';
+import { Achievement } from './types';
 
 export const achievements: Achievement[] = [
   {
@@ -40,24 +40,4 @@ export const achievements: Achievement[] = [
   },
 ];
 
-export const certifications: Certification[] = [
-  {
-    id: 'postman-api',
-    name: 'Postman API Fundamentals Expert',
-    issuer: 'Postman',
-    date: 'October 2025',
-    credentialLink: 'https://api.badgr.io/public/assertions/your-credential-id',
-  },
-  {
-    id: 'seo-certification',
-    name: 'Search Engine Optimization',
-    issuer: 'HubSpot Academy',
-    date: 'October 2025',
-  },
-  {
-    id: 'aws-certifications',
-    name: 'AWS Cloud Foundations & Technical Essentials',
-    issuer: 'AWS Skill Builder',
-    date: 'February 2025',
-  },
-];
+
