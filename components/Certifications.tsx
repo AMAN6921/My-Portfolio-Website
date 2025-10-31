@@ -38,20 +38,20 @@ export default function Certifications({ certifications }: CertificationsProps) 
     <section
       id="certifications"
       ref={sectionRef}
-      className="min-h-screen flex items-center justify-center bg-white py-16 sm:py-20 px-4 sm:px-6"
+      className="min-h-screen flex items-center justify-center bg-gradient-to-b from-dark-900 to-dark-950 py-16 sm:py-20 px-4 sm:px-6"
       aria-labelledby="certifications-heading"
     >
       <div className="max-w-5xl w-full">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h2 id="certifications-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
+          <h2 id="certifications-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent mb-3 sm:mb-4 font-outfit">
             Certifications
           </h2>
-          <p className="text-base sm:text-lg text-gray-600">
+          <p className="text-base sm:text-lg text-dark-400 font-outfit">
             Professional certifications and credentials
           </p>
         </motion.div>
@@ -63,11 +63,11 @@ export default function Certifications({ certifications }: CertificationsProps) 
             return (
               <motion.article
                 key={certification.id}
-                initial={{ opacity: 0, x: -30 }}
-                animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`bg-gray-50 rounded-lg p-5 sm:p-6 min-h-[100px] border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all duration-300 ${
-                  hasCredentialLink ? 'cursor-pointer hover:-translate-y-1 active:translate-y-0 focus-within:ring-2 focus-within:ring-blue-600 focus-within:ring-offset-2' : ''
+                initial={{ opacity: 0, y: 30 }}
+                animate={isVisible ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+                className={`bg-gradient-to-br from-dark-800/50 to-dark-900/50 backdrop-blur-sm rounded-lg p-5 sm:p-6 min-h-[100px] border border-primary-500/30 hover:border-primary-400/50 hover:shadow-lg hover:shadow-primary-500/20 transition-all duration-200 ${
+                  hasCredentialLink ? 'cursor-pointer hover:-translate-y-1 active:translate-y-0 focus-within:ring-2 focus-within:ring-primary-500 focus-within:ring-offset-2 focus-within:ring-offset-dark-950' : ''
                 }`}
                 onClick={() => {
                   if (certification.credentialLink) {
@@ -85,25 +85,25 @@ export default function Certifications({ certifications }: CertificationsProps) 
                 }}
               >
                 <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="flex-shrink-0 text-blue-600 bg-blue-100 p-2 sm:p-3 rounded-lg" aria-hidden="true">
+                  <div className="flex-shrink-0 text-primary-400 bg-primary-500/20 p-2 sm:p-3 rounded-lg" aria-hidden="true">
                     <Award className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
                   
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-3 sm:gap-4 mb-2">
-                      <h3 id={`certification-name-${certification.id}`} className="text-lg sm:text-xl font-semibold text-gray-900">
+                      <h3 id={`certification-name-${certification.id}`} className="text-lg sm:text-xl font-semibold text-primary-300">
                         {certification.name}
                       </h3>
                       {hasCredentialLink && (
-                        <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400 flex-shrink-0 mt-1 hover:text-blue-600 transition-colors" aria-hidden="true" />
+                        <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5 text-dark-400 flex-shrink-0 mt-1 hover:text-primary-400 transition-colors" aria-hidden="true" />
                       )}
                     </div>
                     
-                    <p className="text-sm sm:text-base text-gray-700 font-medium mb-2">
+                    <p className="text-sm sm:text-base text-dark-200 font-medium mb-2 font-work">
                       {certification.issuer}
                     </p>
                     
-                    <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
+                    <div className="flex items-center gap-2 text-xs sm:text-sm text-dark-300">
                       <Calendar className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
                       <time dateTime={certification.date}>{certification.date}</time>
                     </div>
@@ -111,7 +111,7 @@ export default function Certifications({ certifications }: CertificationsProps) 
                     {hasCredentialLink && (
                       <>
                         <div className="mt-3">
-                          <span className="text-xs sm:text-sm text-blue-600 font-medium hover:text-blue-700" aria-hidden="true">
+                          <span className="text-xs sm:text-sm text-primary-400 font-medium hover:text-primary-300" aria-hidden="true">
                             View Credential →
                           </span>
                         </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Outfit, Work_Sans } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,13 +8,27 @@ const inter = Inter({
   display: "swap",
 });
 
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-outfit",
+  display: "swap",
+});
+
+const workSans = Work_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-work",
+  display: "swap",
+});
+
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://amandevrani.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Aman Devrani | Software Engineer & ML Enthusiast",
-    template: "%s | Aman Devrani",
+    default: "Aman Devrani's Portfolio",
+    template: "%s | Aman Devrani's Portfolio",
   },
   description: "Portfolio of Aman Devrani - Computer Science student specializing in C++, Python, JavaScript, and Machine Learning. View projects, experience, and achievements.",
   keywords: [
@@ -72,6 +86,13 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
   },
+  icons: {
+    icon: [
+      { url: '/favicon.png', type: 'image/png', sizes: '32x32' },
+    ],
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
 };
 
 export default function RootLayout({
@@ -105,21 +126,23 @@ export default function RootLayout({
     ],
     sameAs: [
       "https://github.com/AMAN6921",
-      "https://linkedin.com/in/aman-devrani",
+      "https://www.linkedin.com/in/amandevrani",
       "https://leetcode.com/AMAN6921",
     ],
-    email: "amandevrani@example.com",
+    email: "aman.devrani6921@gmail.com",
   };
 
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${outfit.variable} ${workSans.variable}`}>
       <head>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+        <link rel="shortcut icon" href="/favicon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="antialiased">
+      <body className="antialiased font-work">
         <a href="#main-content" className="skip-to-main">
           Skip to main content
         </a>

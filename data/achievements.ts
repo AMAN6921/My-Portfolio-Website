@@ -6,7 +6,7 @@ export const achievements: Achievement[] = [
     title: 'LeetCode Problem Solver',
     description: 'Solved 185+ algorithmic problems across various difficulty levels, demonstrating strong problem-solving and data structures knowledge',
     icon: 'Code2',
-    link: 'https://leetcode.com/AMAN6921',
+    link: 'https://leetcode.com/u/AMAN_6921',
   },
   {
     id: 'team-leader',
@@ -25,6 +25,18 @@ export const achievements: Achievement[] = [
     title: 'Coursera License',
     description: 'Recognized for exceptional academic achievement and commitment to continuous learning',
     icon: 'GraduationCap',
+  },
+  {
+    id: 'public-speaking',
+    title: 'Public Speaking & Debate',
+    description: 'Accomplished speaker and debater with strong communication and critical thinking skills. Active participant in debates and group discussions as a member of the DebSoc GEU Society',
+    icon: 'Users',
+  },
+  {
+    id: 'typing-speed',
+    title: 'Advanced Typing Proficiency',
+    description: 'Consistently achieving 150+ words per minute with high accuracy, enabling rapid code implementation and significantly enhancing development productivity',
+    icon: 'Code2',
   },
 ];
 

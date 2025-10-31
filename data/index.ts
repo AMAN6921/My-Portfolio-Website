@@ -4,4 +4,5 @@ export * from './projects';
 export * from './skills';
 export * from './experience';
 export * from './achievements';
+export * from './certifications';
 export * from './hero';

@@ -4,9 +4,9 @@ import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import Experience from '@/components/Experience';
 import Achievements from '@/components/Achievements';
-import Certifications from '@/components/Certifications';
 import Contact from '@/components/Contact';
-import { heroData, skillCategories, projects, experiences, achievements, certifications } from '@/data';
+import Footer from '@/components/Footer';
+import { heroData, skillCategories, projects, experiences, achievements } from '@/data';
 
 // Force static generation for optimal performance
 export const dynamic = 'force-static';
@@ -36,14 +36,17 @@ export default function Home() {
 
         <Achievements achievements={achievements} />
 
-        <Certifications certifications={certifications} />
-
         <Contact
           email={heroData.contacts.email}
           github={heroData.contacts.github}
           linkedin={heroData.contacts.linkedin}
         />
       </main>
+
+      <Footer
+        name={heroData.name}
+        contacts={heroData.contacts}
+      />
     </>
   );
 }

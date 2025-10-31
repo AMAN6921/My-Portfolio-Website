@@ -49,20 +49,20 @@ export default function Achievements({ achievements }: AchievementsProps) {
     <section
       id="achievements"
       ref={sectionRef}
-      className="min-h-screen flex items-center justify-center bg-gray-50 py-16 sm:py-20 px-4 sm:px-6"
+      className="min-h-screen flex items-center justify-center bg-gradient-to-b from-dark-950 to-dark-900 py-16 sm:py-20 px-4 sm:px-6"
       aria-labelledby="achievements-heading"
     >
       <div className="max-w-7xl w-full">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h2 id="achievements-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
+          <h2 id="achievements-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent mb-3 sm:mb-4 font-outfit">
             Achievements
           </h2>
-          <p className="text-base sm:text-lg text-gray-600">
+          <p className="text-base sm:text-lg text-dark-400 font-outfit">
             Notable accomplishments and recognitions
           </p>
         </motion.div>
@@ -77,9 +77,9 @@ export default function Achievements({ achievements }: AchievementsProps) {
                 key={achievement.id}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`bg-white rounded-lg p-5 sm:p-6 min-h-[120px] border border-gray-200 hover:border-blue-400 hover:shadow-xl transition-all duration-300 ${
-                  isClickable ? 'cursor-pointer hover:-translate-y-2 active:translate-y-0 focus-within:ring-2 focus-within:ring-blue-600 focus-within:ring-offset-2' : 'hover:-translate-y-1'
+                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+                className={`bg-gradient-to-br from-dark-800/50 to-dark-900/50 backdrop-blur-sm rounded-lg p-5 sm:p-6 min-h-[180px] flex flex-col border border-primary-500/30 hover:border-primary-400/50 hover:shadow-xl hover:shadow-primary-500/20 transition-all duration-200 ${
+                  isClickable ? 'cursor-pointer hover:-translate-y-2 active:translate-y-0 focus-within:ring-2 focus-within:ring-primary-500 focus-within:ring-offset-2 focus-within:ring-offset-dark-950' : 'hover:-translate-y-1'
                 }`}
                 onClick={() => {
                   if (achievement.link) {
@@ -96,20 +96,20 @@ export default function Achievements({ achievements }: AchievementsProps) {
                   }
                 }}
               >
-                <div className="flex items-start gap-3 sm:gap-4">
-                  <div className="flex-shrink-0 text-blue-600 bg-blue-50 p-2 sm:p-3 rounded-lg" aria-hidden="true">
+                <div className="flex items-start gap-3 sm:gap-4 h-full">
+                  <div className="flex-shrink-0 text-primary-400 bg-primary-500/20 p-2 sm:p-3 rounded-lg self-start" aria-hidden="true">
                     {IconComponent}
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-2">
-                      <h3 id={`achievement-title-${achievement.id}`} className="text-base sm:text-lg font-semibold text-gray-900 mb-2">
+                  <div className="flex-1 min-w-0 flex flex-col">
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <h3 id={`achievement-title-${achievement.id}`} className="text-base sm:text-lg font-semibold text-primary-300 font-outfit">
                         {achievement.title}
                       </h3>
                       {achievement.link && (
-                        <ExternalLink className="w-4 h-4 text-gray-400 flex-shrink-0 mt-1" aria-hidden="true" />
+                        <ExternalLink className="w-4 h-4 text-dark-400 flex-shrink-0 mt-1" aria-hidden="true" />
                       )}
                     </div>
-                    <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-dark-200 leading-relaxed font-work flex-grow">
                       {achievement.description}
                     </p>
                     {achievement.link && (

@@ -17,7 +17,6 @@ const defaultSections = [
   { id: 'projects', label: 'Projects' },
   { id: 'experience', label: 'Experience' },
   { id: 'achievements', label: 'Achievements' },
-  { id: 'certifications', label: 'Certifications' },
   { id: 'contact', label: 'Contact' },
 ];
 
@@ -25,30 +24,44 @@ export default function Navigation({ sections = defaultSections }: NavigationPro
   const [activeSection, setActiveSection] = useState('hero');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      // Update scroll state for backdrop blur effect
-      setIsScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          // Update scroll state for backdrop blur effect
+          setIsScrolled(window.scrollY > 20);
 
-      // Find active section based on scroll position
-      const sectionElements = sections.map(section => ({
-        id: section.id,
-        element: document.getElementById(section.id),
-      }));
+          // Calculate scroll progress
+          const windowHeight = window.innerHeight;
+          const documentHeight = document.documentElement.scrollHeight;
+          const scrollTop = window.scrollY;
+          const scrollableHeight = documentHeight - windowHeight;
+          const progress = scrollableHeight > 0 ? (scrollTop / scrollableHeight) * 100 : 0;
+          setScrollProgress(progress);
 
-      const scrollPosition = window.scrollY + 100;
+          // Find active section based on scroll position
+          const scrollPosition = window.scrollY + 150;
 
-      for (let i = sectionElements.length - 1; i >= 0; i--) {
-        const section = sectionElements[i];
-        if (section.element && section.element.offsetTop <= scrollPosition) {
-          setActiveSection(section.id);
-          break;
-        }
+          for (let i = sections.length - 1; i >= 0; i--) {
+            const element = document.getElementById(sections[i].id);
+            if (element && element.offsetTop <= scrollPosition) {
+              setActiveSection(sections[i].id);
+              break;
+            }
+          }
+
+          ticking = false;
+        });
+
+        ticking = true;
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Initial check
 
     return () => window.removeEventListener('scroll', handleScroll);
@@ -58,7 +71,7 @@ export default function Navigation({ sections = defaultSections }: NavigationPro
     const element = document.getElementById(sectionId);
     if (element) {
       const offset = 80; // Account for fixed navbar height
-      const elementPosition = element.offsetTop - offset;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset - offset;
       
       window.scrollTo({
         top: elementPosition,
@@ -69,16 +82,9 @@ export default function Navigation({ sections = defaultSections }: NavigationPro
   };
 
   return (
-    <header role="banner">
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5, ease: 'easeOut' }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-white/80 backdrop-blur-md shadow-md'
-            : 'bg-transparent'
-        }`}
+    <header role="banner" className="sticky top-0 z-50">
+      <nav
+        className="fixed top-0 left-0 right-0 z-50 bg-dark-900/95 backdrop-blur-md shadow-lg shadow-primary-500/10 border-b border-primary-500/20 transition-all duration-300"
         role="navigation"
         aria-label="Main navigation"
       >
@@ -89,7 +95,7 @@ export default function Navigation({ sections = defaultSections }: NavigationPro
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection('hero')}
-              className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 rounded-lg px-2"
+              className="text-xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent hover:from-primary-300 hover:to-accent-300 transition-all focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-dark-900 rounded-lg px-2 font-outfit"
               aria-label="Go to home section"
             >
               Aman Devrani
@@ -103,10 +109,10 @@ export default function Navigation({ sections = defaultSections }: NavigationPro
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => scrollToSection(section.id)}
-                  className={`px-4 py-2 min-h-[44px] rounded-lg text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 ${
+                  className={`px-4 py-2 min-h-[44px] rounded-lg text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-dark-900 ${
                     activeSection === section.id
-                      ? 'text-blue-600 bg-blue-50'
-                      : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                      ? 'text-primary-300 bg-primary-500/20 border border-primary-500/30'
+                      : 'text-dark-300 hover:text-primary-400 hover:bg-primary-500/10'
                   }`}
                   role="menuitem"
                   aria-label={`Navigate to ${section.label} section`}
@@ -121,7 +127,7 @@ export default function Navigation({ sections = defaultSections }: NavigationPro
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-3 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-gray-700 hover:bg-gray-100 transition-colors active:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+              className="md:hidden p-3 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-dark-300 hover:bg-primary-500/20 transition-colors active:bg-primary-500/30 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-dark-900"
               aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
@@ -153,6 +159,31 @@ export default function Navigation({ sections = defaultSections }: NavigationPro
           </div>
         </div>
 
+        {/* Scroll Progress Bar - Always Visible */}
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-500/20 to-accent-500/20">
+          <motion.div
+            className="h-full bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 shadow-lg shadow-primary-500/50"
+            style={{ width: `${scrollProgress}%`, transformOrigin: 'left' }}
+            transition={{ duration: 0.1 }}
+          >
+            {/* Animated glow effect at the end of progress bar */}
+            {scrollProgress > 0 && (
+              <motion.div
+                className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-r from-transparent to-primary-400"
+                animate={{
+                  opacity: [0.5, 1, 0.5],
+                  scale: [1, 1.2, 1],
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
+              />
+            )}
+          </motion.div>
+        </div>
+
         {/* Mobile Menu Drawer */}
         <AnimatePresence>
           {isMenuOpen && (
@@ -161,7 +192,7 @@ export default function Navigation({ sections = defaultSections }: NavigationPro
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden fixed inset-0 top-16 bg-black/50 backdrop-blur-sm"
+              className="md:hidden fixed inset-0 top-16 bg-black/70 backdrop-blur-sm"
               onClick={() => setIsMenuOpen(false)}
               aria-hidden="true"
             >
@@ -171,7 +202,7 @@ export default function Navigation({ sections = defaultSections }: NavigationPro
                 animate={{ x: 0 }}
                 exit={{ x: -300 }}
                 transition={{ duration: 0.3, ease: 'easeInOut' }}
-                className="bg-white w-64 h-full shadow-xl"
+                className="bg-dark-900 w-64 h-full shadow-xl border-r border-primary-500/20"
                 onClick={(e) => e.stopPropagation()}
                 role="menu"
                 aria-label="Mobile navigation menu"
@@ -185,10 +216,10 @@ export default function Navigation({ sections = defaultSections }: NavigationPro
                       transition={{ duration: 0.3, delay: index * 0.05 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => scrollToSection(section.id)}
-                      className={`px-4 py-3 min-h-[44px] rounded-lg text-left font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 ${
+                      className={`px-4 py-3 min-h-[44px] rounded-lg text-left font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-dark-900 ${
                         activeSection === section.id
-                          ? 'text-blue-600 bg-blue-50'
-                          : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50 active:bg-gray-100'
+                          ? 'text-primary-300 bg-primary-500/20 border border-primary-500/30'
+                          : 'text-dark-300 hover:text-primary-400 hover:bg-primary-500/10 active:bg-primary-500/20'
                       }`}
                       role="menuitem"
                       aria-label={`Navigate to ${section.label} section`}
@@ -202,7 +233,7 @@ export default function Navigation({ sections = defaultSections }: NavigationPro
             </motion.div>
           )}
         </AnimatePresence>
-      </motion.nav>
+      </nav>
     </header>
   );
 }

@@ -1,9 +1,10 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { Project } from '@/data/types';
 import ProjectCard from './ProjectCard';
+import AnimatedBackground from './AnimatedBackground';
 
 interface ProjectsProps {
   projects: Project[];
@@ -12,6 +13,13 @@ interface ProjectsProps {
 export default function Projects({ projects }: ProjectsProps) {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -38,30 +46,41 @@ export default function Projects({ projects }: ProjectsProps) {
     <section
       id="projects"
       ref={sectionRef}
-      className="min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-blue-50 py-16 sm:py-20 px-4 sm:px-6"
+      className="min-h-screen flex items-center justify-center bg-gradient-to-b from-dark-950 to-dark-900 py-16 sm:py-20 px-4 sm:px-6 pt-24 sm:pt-28 relative overflow-hidden"
       aria-labelledby="projects-heading"
     >
-      <div className="max-w-7xl w-full">
+      <AnimatedBackground variant="grid" />
+      <motion.div className="max-w-7xl w-full" style={{ opacity }}>
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, x: -50 }}
+          animate={isVisible ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h2 id="projects-heading" className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
+          <motion.h2 
+            id="projects-heading" 
+            className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent mb-3 sm:mb-4 font-outfit cursor-default"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          >
             Featured Projects
-          </h2>
-          <p className="text-base sm:text-lg text-gray-600 px-4">
+          </motion.h2>
+          <motion.p 
+            className="text-base sm:text-lg text-dark-400 px-4 font-outfit"
+            initial={{ opacity: 0 }}
+            animate={isVisible ? { opacity: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             Showcasing my work in software development and machine learning
-          </p>
+          </motion.p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8" role="list" aria-label="Featured projects">
           {projects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
+            <ProjectCard key={project.id} project={project} index={index} isVisible={isVisible} />
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

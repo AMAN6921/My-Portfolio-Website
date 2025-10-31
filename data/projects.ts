@@ -8,7 +8,7 @@ export const projects: Project[] = [
     duration: 'Apr 2025 – Jun 2025',
     description: 'Developed an optimized cloud resource allocation system using the 0/1 Knapsack Algorithm, reducing VM wastage and improving cloud efficiency.',
     impact: 'Enhanced performance and reliability of VM allocation',
-    githubLink: 'https://github.com/AMAN6921/cloud-vm-optimization',
+    githubLink: 'https://github.com/AMAN6921/Efficient-Cloud-Computing-Resource-Allocation-To-Virtual-Machines-Using-0-1-Knapsack-Problem',
   },
   {
     id: 'house-price-predictor',
@@ -18,7 +18,7 @@ export const projects: Project[] = [
     description: 'Built a machine learning model to predict house prices based on various features using regression algorithms.',
     impact: 'Achieved 93% prediction accuracy on test dataset',
     accuracy: '93%',
-    githubLink: 'https://github.com/AMAN6921/house-price-predictor',
+    githubLink: 'https://github.com/AMAN6921/House-Price-Predictor-Based-On-Geographical-Location-Other-Property-Attributes',
   },
   {
     id: 'ml-loan-allocation',
@@ -28,6 +28,6 @@ export const projects: Project[] = [
     description: 'Developed a multi-model machine learning system for loan allocation decisions, comparing multiple algorithms to optimize approval accuracy.',
     impact: 'Achieved 95% accuracy in loan approval predictions',
     accuracy: '95%',
-    githubLink: 'https://github.com/AMAN6921/ml-loan-allocation',
+    githubLink: 'https://github.com/AMAN6921/A-Practical-Pre-Approved-Loan-Allocation-Model-Using-Machine-Learning-Algorithms-Neural-Processing',
   },
 ];
