@@ -54,7 +54,7 @@ export default function ProjectCard({ project, index, isVisible: parentVisible }
     >
       <div className="p-5 sm:p-6">
         {/* Header with title */}
-        <div className="mb-4">
+        <div className={project.id === 'portfolio-website' || project.id === 'sikhshabox' ? 'mb-8' : 'mb-4'}>
           <motion.h3 
             id={`project-title-${project.id}`} 
             className="text-xl sm:text-2xl font-bold text-primary-300 cursor-default"
