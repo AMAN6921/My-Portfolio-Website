@@ -67,6 +67,8 @@ npm run lint
 
 Open [http://localhost:3000](http://localhost:3000) to view the portfolio in your browser.
 
+My Portfolio - [amandevrani.vercel.app](https://amandevrani.vercel.app) to view my deployed portfolio in your browser.
+
 ## Features
 
 - ✅ Responsive design (mobile-first approach)
