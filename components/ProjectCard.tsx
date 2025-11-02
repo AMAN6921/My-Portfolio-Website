@@ -51,7 +51,6 @@ export default function ProjectCard({ project, index, isVisible: parentVisible }
       whileHover={{ y: -8, transition: { duration: 0.2 } }}
       className="bg-gradient-to-br from-dark-800/50 to-dark-900/50 backdrop-blur-sm rounded-lg border border-primary-500/30 shadow-lg shadow-primary-500/10 hover:shadow-xl hover:shadow-primary-500/20 hover:border-primary-400/50 transition-all duration-300 overflow-hidden"
       aria-labelledby={`project-title-${project.id}`}
-      style={project.id === 'geubus-management' ? { width: '535.5px', height: '652px' } : undefined}
     >
       <div className="p-5 sm:p-6">
         {/* Header with title */}
