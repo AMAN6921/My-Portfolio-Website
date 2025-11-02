@@ -2,9 +2,26 @@ import { ExperienceItem } from './types';
 
 export const experiences: ExperienceItem[] = [
   {
+    position: 'Green Skills AI/ML Engineer',
+    organization: 'AICTE-Shell-Edunet Foundation - Internship',
+    duration: 'Oct 2025 - Present',
+    location: 'Remote',
+    description: [
+      'Developing EcoDrive, an AI-powered software system to promote sustainable and fuel-efficient driving using machine learning and computer vision',
+      'Implementing real-time object detection and lane analysis to evaluate road conditions and driver behavior',
+      'Building ML models to predict and optimize fuel efficiency based on speed, braking, and acceleration patterns',
+      'Aligning AI systems with UN Sustainable Development Goals (SDG 13: Climate Action) by encouraging eco-friendly driving practices',
+    ],
+    highlights: [
+      'Computer vision integration for real-time driving behavior analysis',
+      'ML-based efficiency optimization for fuel consumption reduction',
+      'Software-only solution designed for wide accessibility without additional hardware',
+    ],
+  },
+  {
     position: 'Open Source Contributor',
     organization: 'GirlScript Summer of Code',
-    duration: 'Oct 2025 - Present',
+    duration: 'Oct 2025 - Nov 2025',
     location: 'Remote',
     description: [
       'Contributing to open-source projects with focus on web development and API integration',
