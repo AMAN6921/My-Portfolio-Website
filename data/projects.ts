@@ -34,7 +34,7 @@ export const projects: Project[] = [
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
     duration: 'June 2025 – Oct 2025',
     description: 'A modern, responsive personal portfolio website built with Next.js 16 and TypeScript, featuring smooth animations powered by Framer Motion and elegant styling with Tailwind CSS. Showcases technical skills, professional experience, academic achievements, and project portfolio across Web Development, AI/ML, and Data Science. Includes interactive sections for skills visualization, detailed project cards, certifications display, and contact form. Optimized for performance with server-side rendering and static generation for fast load times and excellent SEO.',
-    impact: 'Professional digital identity providing recruiters and collaborators with an interactive and responsive platform',
+    impact: 'Serves as a comprehensive professional digital identity, enabling recruiters and collaborators to explore my technical expertise and project portfolio through an interactive, responsive platform. Demonstrates proficiency in modern web development practices, UI/UX design principles, and performance optimization. Facilitates networking opportunities and showcases continuous learning through regularly updated content. Provides a centralized hub for professional presence with seamless navigation and accessibility compliance.',
     githubLink: 'https://github.com/AMAN6921/My-Portfolio-Website',
   },
   {
