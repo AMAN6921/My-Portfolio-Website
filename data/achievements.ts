@@ -4,7 +4,7 @@ export const achievements: Achievement[] = [
   {
     id: 'leetcode',
     title: 'LeetCode Problem Solver',
-    description: 'Solved 185+ algorithmic problems across various difficulty levels, demonstrating strong problem-solving and data structures knowledge',
+    description: 'Solved 190+ algorithmic problems across various difficulty levels, demonstrating strong problem-solving and data structures knowledge',
     icon: 'Code2',
     link: 'https://leetcode.com/u/AMAN_6921',
   },
