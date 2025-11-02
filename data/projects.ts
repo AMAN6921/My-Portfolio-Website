@@ -2,6 +2,42 @@ import { Project } from './types';
 
 export const projects: Project[] = [
   {
+    id: 'ecodrive-ai',
+    title: 'EcoDrive: AI System for Sustainable Driving',
+    tech: ['Python', 'YOLOv8', 'PyTorch', 'PySpark', 'OpenCV', 'Flask'],
+    duration: 'Oct 2025 – Present',
+    description: 'A software-based AI system using object detection and machine learning to analyze live traffic video feeds, dynamically optimize signal timings, and reduce vehicle idling time for fuel efficiency and lower emissions.',
+    impact: 'Reduces vehicle idle time and CO₂ emissions through real-time AI-driven traffic signal optimization, deployable on existing infrastructure',
+    githubLink: 'https://github.com/AMAN6921/EcoDrive-AI-Sustainable-Driving',
+  },
+  {
+    id: 'geubus-management',
+    title: 'GeuBus – Smart Bus Management System',
+    tech: ['Node.js', 'Express.js', 'MySQL', 'Socket.io', 'Leaflet.js'],
+    duration: 'July 2025 – Nov 2025',
+    description: 'An intelligent DBMS-based bus management system for real-time bus tracking, automated seat allocation, fare management, and scheduling with dual portals for students and drivers.',
+    impact: 'Enables real-time bus tracking and automated resource allocation, reducing operational inefficiencies and improving campus transport coordination',
+    githubLink: 'https://github.com/AMAN6921/GeuBus-Smart-DBMS-Based-Bus-Management-System',
+  },
+  {
+    id: 'sikhshabox',
+    title: 'SikhshaBox – Lightweight OS Virtualization for Education',
+    tech: ['Docker', 'Node.js', 'React', 'PostgreSQL', 'Ubuntu Server'],
+    duration: 'Jan 2024 – Mar 2024',
+    description: 'A full-stack platform providing isolated virtual environments for students to practice coding, with smart resource allocation, automated code feedback, and personalized learning insights.',
+    impact: '70% reduction in initial cost and 80% reduction in operational costs compared to traditional labs, with boot times reduced from minutes to seconds',
+    githubLink: 'https://github.com/AMAN6921/SikhshaBox-Education-Virtualization',
+  },
+  {
+    id: 'portfolio-website',
+    title: 'My Portfolio Website',
+    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+    duration: 'June 2025 – Oct 2025',
+    description: 'A personal portfolio website designed to showcase my skills, projects, and achievements in Web Development, AI/ML, and Data Science.',
+    impact: 'Professional digital identity providing recruiters and collaborators with an interactive and responsive platform',
+    githubLink: 'https://github.com/AMAN6921/portfolio-website',
+  },
+  {
     id: 'cloud-vm-optimization',
     title: 'Cloud VM Resource Optimization',
     tech: ['C++', 'React', 'Flask', 'DSA Algorithms'],
