@@ -8,7 +8,7 @@ export const projects: Project[] = [
     duration: 'Oct 2025 – Present',
     description: 'A software-based AI system using object detection and machine learning to analyze live traffic video feeds, dynamically optimize signal timings, and reduce vehicle idling time for fuel efficiency and lower emissions.',
     impact: 'Reduces vehicle idle time and CO₂ emissions through real-time AI-driven traffic signal optimization, deployable on existing infrastructure',
-    githubLink: 'https://github.com/AMAN6921/EcoDrive-AI-Sustainable-Driving',
+    githubLink: 'https://github.com/AMAN6921/EcoDrive-A-Software-Based-AI-System-for-Sustainable-and-Fuel-Efficient-Driving',
   },
   {
     id: 'geubus-management',
@@ -26,7 +26,7 @@ export const projects: Project[] = [
     duration: 'Jan 2024 – Mar 2024',
     description: 'A full-stack platform providing isolated virtual environments for students to practice coding, with smart resource allocation, automated code feedback, and personalized learning insights.',
     impact: '70% reduction in initial cost and 80% reduction in operational costs compared to traditional labs, with boot times reduced from minutes to seconds',
-    githubLink: 'https://github.com/AMAN6921/SikhshaBox-Education-Virtualization',
+    githubLink: 'https://github.com/AMAN6921/SikhshaBox-Lightweight-OS-Virtualization-For-Affordable-Education-Labs',
   },
   {
     id: 'portfolio-website',
@@ -35,7 +35,7 @@ export const projects: Project[] = [
     duration: 'June 2025 – Oct 2025',
     description: 'A personal portfolio website designed to showcase my skills, projects, and achievements in Web Development, AI/ML, and Data Science.',
     impact: 'Professional digital identity providing recruiters and collaborators with an interactive and responsive platform',
-    githubLink: 'https://github.com/AMAN6921/portfolio-website',
+    githubLink: 'https://github.com/AMAN6921/My-Portfolio-Website',
   },
   {
     id: 'cloud-vm-optimization',
